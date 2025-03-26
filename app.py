@@ -49,7 +49,7 @@ for name in team_icons.keys():
 st.header('기록 입력')
 date = st.date_input('날짜 선택', datetime.today())
 yo_il = date.strftime('%a')
-payer = st.text_input('결제자')
+payer = st.selectbox('결제자 선택', list(team_icons.keys()))
 amount = st.number_input('사용 금액', min_value=0)
 attendees = {name: st.checkbox(f'{icon} {name}') for name, icon in team_icons.items()}
 note = st.text_area('특이사항')
